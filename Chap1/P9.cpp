@@ -1,10 +1,10 @@
 #include<iostream>
 #include<algorithm>
 #include<vector>
+#include<math.h>
 using namespace std;
 
-//섹시 소수 짝을 출력하는 프로그램 구현하기
-
+//소인수분해 프로그램 구현하기
 
 
 int main()
@@ -28,12 +28,20 @@ int main()
         }
     }
 
-    for(int i=a-1;i>7;i--)
+    int num = a;
+    vector<int> ans;
+    for(int i=2;i<=num;i++)
     {
-        if(!v[i] && !v[i-6])
+        if(!v[i] && num % i == 0)
         {
-            cout<<"sexy prime : (" <<i<<","<<i-6<<")\n";
+            ans.push_back(i);
+            num /= i;
+            i--;
         }
+    }
+    for(int i=0;i<ans.size();i++)
+    {
+        cout<<ans[i]<<" ";
     }
 
 }
