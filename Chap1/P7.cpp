@@ -15,7 +15,7 @@ int main()
 
     v.resize(a+1);
 
-    //에라토스테네스의 체 // 과잉수
+    //에라토스테네스의 체 // 진약수
     for(int i=1;i<=a/2;i++)
     {
         for(int j = i*2;j<=a;j+=i)
